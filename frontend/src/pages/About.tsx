@@ -1,0 +1,12 @@
+export default function About() {
+  return <section className="analysis-page">
+    <div className="analysis-page-heading"><div><p className="eyebrow">MARKETMINER / HOW IT WORKS</p><h1>Methods &amp; limits</h1><p>A plain-language guide to the analysis running on this site.</p></div></div>
+    <div className="analysis-two-col">
+      <article className="analysis-card pattern-explainer"><p className="eyebrow">01 / DATA</p><h2>One offline index history</h2><p>The bundled SPX CSV contains daily OHLCV observations. The app cleans dates, sorts observations, calculates indicators, and computes each day's next-session target. All analyses use this same dataset.</p></article>
+      <article className="analysis-card pattern-explainer"><p className="eyebrow">02 / CLUSTERING</p><h2>K-means regimes</h2><p>Overlapping 60-session windows are described by annualized return, volatility, total window return, and maximum drawdown. StandardScaler puts features on comparable scales; K-means uses a fixed random seed. PCA projects the four features to two dimensions for display.</p></article>
+      <article className="analysis-card pattern-explainer"><p className="eyebrow">03 / PATTERNS</p><h2>Rules and sequences</h2><p>Apriori and FP-Growth find co-occurring indicator signals and next-day direction. Support is the share of rows containing a rule, confidence is the share of matching signal rows with its outcome, and lift compares that confidence with the overall outcome rate. PrefixSpan finds recurring signal order across short windows.</p></article>
+      <article className="analysis-card pattern-explainer"><p className="eyebrow">04 / BACKTEST</p><h2>Chronological holdout</h2><p>Rules are mined on the first portion of history and evaluated on the later portion. A signal is executed at the next session's open. One position may be open at a time; stop, target, holding period, costs, and slippage are applied to both the strategy and Buy &amp; Hold baseline.</p></article>
+    </div>
+    <article className="data-note limitations"><span>Read results with care</span><p>This is a single historical index, not a multi-stock universe. Historical results are not forecasts. The 70/30 default split still permits model selection over the training set; overfitting, survivorship effects in the source history, non-stationarity, simplified execution, and zero/missing volume can affect results. The supplied file ends in 2020. This tool is educational, not financial advice.</p></article>
+  </section>
+}

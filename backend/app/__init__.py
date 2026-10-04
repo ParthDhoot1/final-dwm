@@ -1,0 +1,1 @@
+"""MarketMiner backend application."""

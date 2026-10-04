@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/api/analysis.ts","./src/pages/about.tsx","./src/pages/backtest.tsx","./src/pages/clustering.tsx","./src/pages/experiments.tsx","./src/pages/explorer.tsx","./src/pages/patterns.tsx"],"version":"5.6.3"}
